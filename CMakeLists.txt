@@ -16,7 +16,11 @@ project(minizip-ng
     VERSION ${VERSION}
     LANGUAGES C
     DESCRIPTION "Zip manipulation library"
-	HOMEPAGE_URL https://github.com/zlib-ng/minizip-ng/)
+	HOMEPAGE_URL https://github.com/enzoevers/minizip-ng)
+
+if(USE_FILE_OFFSET_BITS64)
+    add_compile_definitions(_FILE_OFFSET_BITS=64)
+endif()
 
 include(CMakeDependentOption)
 include(CheckLibraryExists)
